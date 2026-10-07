@@ -1,0 +1,10 @@
+# Environment built by BinderHub (repo2docker) when this repo is launched.
+# Python packages are installed from pyproject.toml by binder/postBuild.
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  # R kernel for notebook 06
+  - r-base
+  - r-irkernel

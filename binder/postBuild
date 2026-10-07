@@ -1,0 +1,6 @@
+#!/bin/bash
+# Runs once at image build time, from the repository root.
+set -euo pipefail
+
+# mcnb plus every notebook's dependencies, as the notebooks' own instructions say.
+pip install --no-cache-dir -e ".[all]"

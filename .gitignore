@@ -1,0 +1,11 @@
+# Secrets: real credentials never belong in this repo
+.env
+.env.*
+env
+env_*
+
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/

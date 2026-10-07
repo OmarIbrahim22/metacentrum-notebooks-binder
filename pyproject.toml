@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcnb"
+version = "0.1.0"
+description = "MetaCentrum/e-INFRA CZ notebook utilities"
+requires-python = ">=3.8"
+dependencies = ["python-dotenv"]
+
+[project.optional-dependencies]
+s3 = ["boto3>=1.34"]
+invenio = ["requests>=2.31"]
+openstack = ["openstacksdk>=3.0"]
+openwebui = ["openai>=1.0"]
+all = ["boto3>=1.34", "requests>=2.31", "openstacksdk>=3.0", "openai>=1.0"]
+dev = ["jupytext", "pytest>=7", "nbclient>=0.9", "nbformat>=5", "tomli>=2; python_version<'3.11'"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: hits real external services using credentials from your env/.env (opt-in: pytest -m integration)",
+]
+addopts = "-m 'not integration'"
